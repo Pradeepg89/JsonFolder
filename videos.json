@@ -1,0 +1,32 @@
+{  
+   "videos":[  
+      {  
+
+         "title":"IOHK Charles",
+         "subtitle":"IOHK Charles Hoskinson at LSE, Cardano’s goals for Africa.",
+         "publishedDate":"Feb 2018",
+         "description":"Cardano’s goals for Africa and the developing world. Charles Hoskinson addresses packed crowd at LSE.",
+         "videoUrl":"https://www.youtube.com/watch?v=YSzVsjG2QoQ",
+         "price":"100",
+          "imageLinks":"https://cosmolearning.org/images_dir/courses/1427/profile-thumbnail-w140.jpg"
+}, {  
+
+         "title":"Intro to NoSQL and JSON",
+         "subtitle":"PROGRAMMING course by CALEBTHEVIDEOMAKER2",
+         "publishedDate":"Dec 2017",
+         "description":"I briefly spoke at an IBM Event last week called Fast Track Your Data. There were some great speakers and awesome demos!",
+         "videoUrl":"https://www.youtube.com/watch?v=-D3dmMfQ9p0",
+         "price":"500",
+          "imageLinks":"https://cosmolearning.org/images_dir/courses/1426/profile-thumbnail-w140.jpg"
+}, {  
+
+         "title":"Git Tutorial for Beginners",
+         "subtitle":"Git Tutorial for Beginners: Command-Line Fundamentals",
+         "publishedDate":"Aug 2015",
+         "description":"Git is the most popular version control system out there and for good reason. In this video, we'll go over the basics of what git is and how to use it within the command-line.",
+         "videoUrl":"https://www.youtube.com/watch?v=HVsySz-h9r4",
+         "price":"100",
+          "imageLinks":"https://cosmolearning.org/images_dir/courses/1423/profile-thumbnail-w140.jpg"
+}
+
+]}

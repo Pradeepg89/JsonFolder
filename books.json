@@ -1,0 +1,69 @@
+{  
+   "books":[  
+      {  
+
+         "title":"HTML5 book",
+         "subtitle":"HTML5 Canvas Cookbook",
+         "authors":  "Eric Rowell",
+         "publishedDate":"November 2011",
+         "description":"The HTML5 canvas is revolutionizing graphics and visualizations on the Web. Powered by JavaScript, the HTML5 Canvas API enables web developers to create visualizations and animations right in the browser for the first time without Flash. HTML5 Canvas is being considered as the future of graphics and interactivity on the Web and yet most developers fail to exercise all of the features that this powerful technology has to offer.",
+         "bookurl":"http://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf",
+         "price":"400",
+          "imageLinks":"https://www.safaribooksonline.com/library/cover/9781849691369/360hhttps://www.safaribooksonline.com/library/cover/9781849691369/360h/"
+},
+  {  
+
+         "title":"iPhone App",
+         "subtitle":"Foundation iPhone App Developmente",
+         "authors":  "Nick Kuh",
+         "publishedDate":"October 2012",
+         "description":"Taking a hands-on learning approach, Foundation iPhone App Development: Build An iPhone App in 5 Days with iOS 6 SDK quickly enables existing programmers to become familiar and comfortable coding Objective-C using Xcode 4.5, Storyboarding and the iOS 6 SDK to create apps for the iPhone. Nick Kuh, an experienced, Apple award-winning developer, will teach readers how to build an iOS 6 iPhone app from start to finish in 5 days.",
+         "bookurl":"http://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf",
+         "price":"600",
+          "imageLinks":"https://www.safaribooksonline.com/library/cover/9781430243748/360h/"
+},
+  {  
+
+         "title":"Beginning Programming Python",
+         "subtitle":"Beginning Programming with Python For Dummies",
+         "authors":  "John Paul Mueller",
+         "publishedDate":"Feb 2018",
+         "description":"Python is a remarkably powerful and dynamic programming language that's used in a wide variety of application domains.",
+         "bookurl":"http://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf",
+         "price":"100",
+          "imageLinks":"http://it-ebooks.info/images/ebooks/9/beginning_programming_with_python_for_dummies_2nd_edition.jpg"
+},
+  {  
+
+         "title":"Mastering Linux",
+         "subtitle":"Mastering Linux Shell Scripting, 2nd Edition",
+         "authors":  "Packt Publishing",
+         "publishedDate":"Jan 2018",
+         "description":"In this book, you'll discover everything you need to know to master shell scripting and make informed choices about the elements you employ",
+         "bookurl":"http://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf",
+         "price":"300",
+         "imageLinks":"http://it-ebooks.info/images/ebooks/14/mastering_linux_shell_scripting_2nd_edition.jpg"
+              
+},  {  
+
+         "title":"Programming Clojure",
+         "subtitle":"Programming Clojure, 3rd Edition",
+         "authors":  "Alex Miller",
+         "publishedDate":"Jan 2018",
+         "description":"Clojure joins the flexibility and agility of Lisp with the reach, stability, and performance of Java. Combine Clojure's tools for maximum effectiveness as you work with immutable data, functional programming, and safe concurrency to write programs that solve real-world problems.",
+         "bookurl":"http://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf",
+         "price":"200",
+          "imageLinks":"http://it-ebooks.info/images/ebooks/1/programming_clojure_3rd_edition.jpg"
+},  {  
+
+         "title":"Propeller Programming",
+         "subtitle":"Using Assembler, Spin, and C",
+         "authors":  "Sridhar Anandakrishnan",
+         "publishedDate":"Feb 2018",
+         "description":"Learn to program the propeller in Spin and C and how to map the Propeller Assembler language (PASM) from other high-level languages you might know",
+         "bookurl":"http://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf",
+         "price":"800",
+          "imageLinks":"http://it-ebooks.info/images/ebooks/6/propeller_programming.jpg"
+}
+
+]}
