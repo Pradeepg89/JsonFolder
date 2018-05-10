@@ -1,0 +1,173 @@
+//
+//  SecondViewController.swift
+//  RetainCycle
+//
+//  Created by Pradeep on 5/10/18.
+//  Copyright © 2018 Pradeep. All rights reserved.
+//
+
+import UIKit
+
+//class CustomTableViewCell: UITableViewCell {
+//    
+//    @IBOutlet weak var lbltitle: UILabel!
+//    
+//    @IBOutlet weak var lblSubtitle: UILabel!
+//    
+//    @IBOutlet weak var lblAuthor: UILabel!
+//    @IBOutlet weak var lblPublishdatae: UILabel!
+//    @IBOutlet weak var lblDescription: UILabel!
+//    @IBOutlet weak var lblPrice: UILabel!
+//    @IBOutlet weak var lblImageLink: UILabel!
+//    
+//    
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        // Initialization code
+//    }
+//    
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//        
+//        // Configure the view for the selected state
+//    }
+//    
+//}
+
+
+
+
+
+struct books {
+   let title:String
+   let subtitle:String
+   let authors:String
+   let publishedDate:String
+   let description:String
+   let price:String
+    let imageLinks:String
+    
+   // let FunData :[FunDataListofChat]
+}
+
+
+class SecondViewController: UIViewController {
+
+    var listofBooks = [books]()
+    
+    
+    let completionHandler = {(data:Data?,response:URLResponse?,error:Error?)-> Void in
+        
+    }
+    
+    @IBOutlet weak var myTableView: UITableView!
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+parseTheResponseFromAPI()
+        // Do any additional setup after loading the view.
+    }
+
+    
+    func parseTheResponseFromAPI(){
+       
+        do{
+        
+        var request = URLRequest(url: URL(string: "https://raw.githubusercontent.com/Pradeepg89/JsonFolder/master/books.json")!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+          request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("pradeep", forHTTPHeaderField: "username")
+//            request.httpMethod = "POST"
+//            let poststring = "id=13&name=Jack"
+//            request.httpBody = poststring.data(using: .utf8)
+
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        
+        let task = session.dataTask(with: request, completionHandler: {(data,response,error) in
+        
+            if error != nil {
+            print(error!.localizedDescription)
+            }else{
+                if let usableData = data {
+                    do{
+                        let jsonDict:NSDictionary = try JSONSerialization.jsonObject(with: usableData, options: .mutableContainers) as! NSDictionary
+                        
+                        let arrayobjbook = jsonDict.object(forKey: "books") as! NSArray
+                        print(arrayobjbook.count)
+                        for singlevalue in arrayobjbook  {
+                            
+                            let datavalue = singlevalue as! Dictionary<String,String>
+                        print(datavalue["title"]!)
+                            
+                          let bookobject = books(title: datavalue["title"]!, subtitle: datavalue["subtitle"]!, authors: datavalue["authors"]!, publishedDate: datavalue["publishedDate"]!, description: datavalue["description"]!, price: datavalue["price"]!, imageLinks: datavalue["imageLinks"]!)
+                            self.listofBooks.append(bookobject)
+                        }
+                        
+                        DispatchQueue.main.async {
+                            self.myTableView.reloadData()
+                        }
+                        
+                      
+                        
+                        //print(jsonDict)
+                    }catch{
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        
+        });
+        
+        task.resume()
+        }
+        catch {
+            print("Error in task")
+        }
+        
+    
+}
+
+}
+
+
+extension SecondViewController:UITableViewDataSource,UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.listofBooks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell:CustomTableViewCell = self.myTableView.dequeueReusableCell(withIdentifier: "CustomCell") as! CustomTableViewCell
+
+        let temppobject = self.listofBooks[indexPath.row]
+        cell.lbltitle.text = temppobject.title
+        cell.lblSubtitle.text = temppobject.subtitle
+        cell.lblPrice.text = temppobject.price
+        cell.lblAuthor.text = temppobject.authors
+        cell.lblDescription.text = temppobject.description
+        cell.lblImageLink.text = temppobject.imageLinks
+        cell.lblPublishdatae.text = temppobject.publishedDate
+        
+        
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 232.0
+    }
+    
+}
+
+
